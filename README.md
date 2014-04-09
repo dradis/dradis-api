@@ -8,7 +8,21 @@ Dradis Framework HTTP API
 
 This plugin provides an external HTTP API that you can use to publish data to your Dradis Framework instance.
 
+Using the API
+-------------
+You can test the API with `curl`. You will need to provide your Dradis instance password and a username of your choosing.
 
+To get the list of nodes:
+```
+$ curl -u user:password http://dradisframework.dev/api/nodes
+```
+
+To add a new node:
+```
+$ curl -u user:password -d "node[label]=from_api" http://dradisframework.dev/api/nodes
+```
+
+A comprehensive API documentation is in the making
 
 Getting help
 ------------
