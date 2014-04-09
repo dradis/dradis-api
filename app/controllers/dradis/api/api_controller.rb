@@ -9,7 +9,8 @@ module Dradis
       #   http://railscasts.com/episodes/352-securing-an-api
       def login_from_token
         authenticate_with_http_token do |token, options|
-          User.find_by_api_token(token)
+          # We don't have the concept of users in Dradis!
+          # User.find_by_api_token(token)
         end
       end
 
