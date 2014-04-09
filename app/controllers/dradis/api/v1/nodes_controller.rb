@@ -33,7 +33,7 @@ module Dradis
           respond_with Node.update(params[:id], params[:node])
         end
 
-        def delete
+        def destroy
           respond_with Node.destroy(params[:id])
         end
       end
