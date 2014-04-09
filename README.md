@@ -8,6 +8,23 @@ Dradis Framework HTTP API
 
 This plugin provides an external HTTP API that you can use to publish data to your Dradis Framework instance.
 
+Installing
+----------
+
+*WARNING* this plugin is in early stages of development. Use at your own risk!
+
+Add the following line to the bottom of your `Gemfile`:
+
+```
+gem 'dradis-api', github: 'dradis/dradis-api'
+```
+
+And run Bundler:
+
+```
+$ bundle
+```
+
 Using the API
 -------------
 You can test the API with `curl`. You will need to provide your Dradis instance password and a username of your choosing.
