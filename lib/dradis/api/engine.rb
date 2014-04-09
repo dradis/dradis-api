@@ -2,7 +2,7 @@ module Dradis
   module API
     class Engine < ::Rails::Engine
       # Standard Rails Engine stuff
-      isolate_namespace Dradis::API
+      isolate_namespace Dradis
       engine_name 'dradis_api'
 
       # use rspec for tests
