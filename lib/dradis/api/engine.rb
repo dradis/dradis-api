@@ -11,8 +11,11 @@ module Dradis
       end
 
       # No need to initialize anything in this case
-      # initializer "dradis.api.<>" do |app|
-      # end
+      initializer "dradis.api.inflections" do |app|
+        ActiveSupport::Inflector.inflections do |inflect|
+          inflect.acronym('API')
+        end
+      end
     end
   end
 end
