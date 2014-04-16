@@ -4,7 +4,14 @@ module Dradis
       class NodesController < APIController
         class Node < ::Node
           def as_json(options={})
-            super({:only => [:id, :label, :type_id, :parent_id]}.reverse_merge(options))
+
+            # WARN: we can use the below because Node's #as_json is broken as
+            # it doesn't make use of the upstream method from ActiveModel. It
+            # just ignores the :only option.
+            # super({only: [:id, :label, :type_id, :parent_id]}.reverse_merge(options))
+
+            args = {only: [:id, :label, :type_id, :parent_id]}.reverse_merge(options)
+            ActiveRecord::Base.instance_method(:as_json).bind(self).call(args)
           end
         end
 
