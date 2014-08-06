@@ -1,15 +1,11 @@
+require_relative 'gem_version'
+
 module Dradis
   module API
-    module VERSION #:nodoc:
-      MAJOR = 3
-      MINOR = 0
-      TINY = 0
-      PRE = "beta"
-
-      STRING = [MAJOR, MINOR, TINY, PRE].compact.join('.')
-      def self.to_s
-        STRING
-      end
+    # Returns the version of the currently loaded API as a
+    # <tt>Gem::Version</tt>.
+    def self.version
+      gem_version
     end
   end
 end
