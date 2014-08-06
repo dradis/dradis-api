@@ -19,23 +19,23 @@ module Dradis
           respond_with @node.evidence.find(params[:id].to_i)
         end
 
-        # def create
-        #   # See:
-        #   #   http://blog.plataformatec.com.br/tag/respond_with/
-        #   evidence = @node.notes.new(params[:note])
-        #   evidence.author = current_user
-        #   evidence.updated_by = current_user
-        #   evidence.save
-        #   if note.valid?
-        #     respond_with(note, location: api_node_note_path(@node, note))
-        #   else
-        #     respond_with(note)
-        #   end
-        # end
+        def create
+          # See:
+          #   http://blog.plataformatec.com.br/tag/respond_with/
+          evidence = @node.evidence.new(evidence_params)
+          evidence.author = current_user
+          evidence.updated_by = current_user
+          evidence.save
+          if evidence.valid?
+            respond_with(evidence, location: api_node_evidence_path(@node, evidence))
+          else
+            respond_with(evidence)
+          end
+        end
 
-        # def update
-        #   respond_with Note.update(params[:id], params[:note])
-        # end
+        def update
+          respond_with @node.evidence.update(params[:id].to_i, evidence_params)
+        end
 
         def destroy
           respond_with @node.evidence.destroy(params[:id].to_i)
@@ -54,6 +54,10 @@ module Dradis
               end
             end
           end
+        end
+
+        def evidence_params
+          params.require(:evidence).permit(:content, :issue_id)
         end
       end
     end
