@@ -13,7 +13,7 @@ Installing
 
 *WARNING* this plugin is in early stages of development. Use at your own risk!
 
-Add the following line to the bottom of your `Gemfile`:
+Add the following line to the bottom of your `Gemfile.plugins`:
 
 ```
 gem 'dradis-api', github: 'dradis/dradis-api'
