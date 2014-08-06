@@ -6,3 +6,4 @@ end
 require 'dradis/api/engine'
 require 'dradis/api/routing_constraints'
 require 'dradis/api/version'
+require 'dradis/api/warden_strategy'
