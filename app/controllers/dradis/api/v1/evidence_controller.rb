@@ -4,7 +4,7 @@ module Dradis
       class EvidenceController < APIController
         class Evidence < ::Dradis::Core::Evidence
           def as_json(options={})
-            super({:only => [:id, :content]}.reverse_merge(options))
+            super({only: [:id, :content]}.reverse_merge(options))
           end
         end
 

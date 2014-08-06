@@ -4,7 +4,7 @@ module Dradis
       class NotesController < APIController
         class Note < ::Dradis::Core::Note
           def as_json(options={})
-            super({:only => [:id, :category_id, :text]}.reverse_merge(options))
+            super({only: [:id, :category_id, :text]}.reverse_merge(options))
           end
         end
 
