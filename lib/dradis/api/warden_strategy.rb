@@ -34,15 +34,15 @@ module Dradis
         @auth ||= Rack::Auth::Basic::Request.new(env)
       end
       def unauthorized(status=401)
-        [
+        Rack::Response.new(
+          [JSON.generate({message: 'Requires authentication'})], 
           status,
           {
-            'Content-Type' => 'text/plain',
+            'Content-Type' => 'application/json',
             'Content-Length' => '0',
-            'WWW-Authenticate' => %(Basic realm="realm")
-          },
-          []
-       ]
+            'WWW-Authenticate' => %(Basic realm="API")
+          }
+        )
       end
     end
   end
