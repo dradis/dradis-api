@@ -1,3 +1,7 @@
+[deprecated] see http://github.com/dradis/dradis-ce 
+===================================================
+ 
+
 Dradis Framework HTTP API
 =========================
 
